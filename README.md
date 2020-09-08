@@ -35,4 +35,5 @@ mkdir -p .github/workflows
 code .github/workflows/tests.yml # see file
 
 # docker hub account https://hub.docker.com/u/testingchneau
+# docker hub image https://hub.docker.com/r/testingchneau/testing-github-actions/tags
 ```
