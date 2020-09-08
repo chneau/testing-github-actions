@@ -8,7 +8,7 @@ RUN dotnet publish \
     /p:PublishTrimmed=true \
     -c Release \
     -o ./out \
-    EntryPoint
+    HelloWorldHttp
 
 FROM mcr.microsoft.com/dotnet/core/runtime-deps:3.1-alpine
 RUN adduser \
@@ -19,4 +19,4 @@ RUN adduser \
 USER app
 WORKDIR /app
 COPY --from=build-env /app/out .
-CMD /app/EntryPoint
+CMD /app/HelloWorldHttp

@@ -12,13 +12,18 @@ dotnet new gitignore
 dotnet new classlib --framework netcoreapp3.1 --name Operations
 dotnet new xunit --name Operations.Tests
 dotnet new console --name EntryPoint
+dotnet new console --name HelloWorldHttp
 dotnet sln add Operations
 dotnet sln add Operations.Tests
 dotnet sln add EntryPoint
+dotnet sln add HelloWorldHttp
 
 # references
 dotnet add Operations.Tests reference Operations
 dotnet add EntryPoint reference Operations
+
+# add nugget
+dotnet add package Microsoft.AspNetCore.Owin --version 3.1.3
 
 # run
 dotnet run --project EntryPoint
