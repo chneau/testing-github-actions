@@ -33,4 +33,6 @@ dotnet test
 # set up
 mkdir -p .github/workflows
 code .github/workflows/tests.yml # see file
+
+# docker hub account https://hub.docker.com/u/testingchneau
 ```
