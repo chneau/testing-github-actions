@@ -45,7 +45,7 @@ jobs:
           host: ${{ secrets.DEPLOY_HOST }}
           username: ${{ secrets.SSH_USERNAME }}
           password: ${{ secrets.SSH_PASSWORD }}
-          port: "21"
+          port: "23"
           script: |
             docker rm -f hello_world || true
             docker run --restart=always -d --name=hello_world --hostname=hello_world -l="traefik.enable=true" -l='traefik.http.routers.hello.rule=Host(`${{ secrets.DEPLOY_HOST }}`)' -l="traefik.http.routers.hello.entrypoints=http" -l="traefik.http.services.hello.loadbalancer.server.port=80" nginxdemos/hello
