@@ -1,5 +1,11 @@
 # testing-github-actions
 
+Learning/testing github actions.
+
+## conclusion
+
+It's as easy as getting the workflow file correct. I'm now planing to replace some of my travis.ci to github action.
+
 ## dev
 
 - Setting up some C# project
