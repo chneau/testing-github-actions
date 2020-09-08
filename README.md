@@ -2,9 +2,19 @@
 
 Learning/testing github actions.
 
+## next
+
+- updating docker container latest tag to the latest deployment version too.
+
 ## conclusion
 
 It's as easy as getting the workflow file correct. I'm now planing to replace some of my travis.ci to github action.
+
+## links
+
+- https://hub.docker.com/r/testingchneau/testing-github-actions/tags
+- https://github.com/chneau/testing-github-actions/actions
+- http://chneau.ddns.net
 
 ## dev
 
