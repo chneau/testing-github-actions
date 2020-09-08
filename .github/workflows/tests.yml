@@ -39,6 +39,9 @@ jobs:
     needs: docker
     name: Deploy to own server
     steps:
+      - name: Get tag name
+        id: get_tag_name
+        run: echo ::set-output name=VERSION::${GITHUB_REF/refs\/tags\//}
       - name: multiple command
         uses: appleboy/ssh-action@master
         with:
@@ -48,4 +51,4 @@ jobs:
           port: "23"
           script: |
             docker rm -f hello_world || true
-            docker run --restart=always -d --name=hello_world --hostname=hello_world -l="traefik.enable=true" -l='traefik.http.routers.hello.rule=Host(`${{ secrets.DEPLOY_HOST }}`)' -l="traefik.http.routers.hello.entrypoints=http" -l="traefik.http.services.hello.loadbalancer.server.port=5000" testingchneau/testing-github-actions:${{ github.event.release.tag_name }}
+            docker run --restart=always -d --name=hello_world --hostname=hello_world -l="traefik.enable=true" -l='traefik.http.routers.hello.rule=Host(`${{ secrets.DEPLOY_HOST }}`)' -l="traefik.http.routers.hello.entrypoints=http" -l="traefik.http.services.hello.loadbalancer.server.port=5000" testingchneau/testing-github-actions:${{ steps.get_tag_name.outputs.VERSION }}
