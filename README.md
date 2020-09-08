@@ -2,6 +2,8 @@
 
 ## dev
 
+- Setting up some C# project
+
 ```bash
 # set up
 dotnet new sln --name Maths
@@ -23,4 +25,12 @@ dotnet run --project EntryPoint
 
 # test
 dotnet test
+```
+
+- Setting up CI
+
+```bash
+# set up
+mkdir -p .github/workflows
+code .github/workflows/tests.yml # see file
 ```
