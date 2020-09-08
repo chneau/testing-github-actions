@@ -2,9 +2,14 @@
 
 Learning/testing github actions.
 
+## to keep in mind
+
+- if using docker hub, they impose new rate limit of their API for non paying customers.
+
 ## next
 
 - updating docker container latest tag to the latest deployment version too.
+- use github container registry https://github.com/marketplace/actions/build-and-publish-docker-image-to-github-packages-registry
 
 ## conclusion
 
