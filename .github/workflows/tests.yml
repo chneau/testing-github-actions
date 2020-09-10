@@ -45,6 +45,7 @@ jobs:
           push: true
           tags: |
             testingchneau/testing-github-actions:${{ steps.get_tag_name.outputs.VERSION }}
+            latest
   deploy:
     runs-on: ubuntu-latest
     needs: docker
@@ -59,7 +60,9 @@ jobs:
           host: ${{ secrets.DEPLOY_HOST }}
           username: ${{ secrets.SSH_USERNAME }}
           password: ${{ secrets.SSH_PASSWORD }}
+          script_stop: true
           port: "23"
           script: |
+            docker pull testingchneau/testing-github-actions:${{ steps.get_tag_name.outputs.VERSION }}
             docker rm -f hello_world || true
             docker run --restart=always -d --name=hello_world --hostname=hello_world -l="traefik.enable=true" -l='traefik.http.routers.hello.rule=Host(`${{ secrets.DEPLOY_HOST }}`)' -l="traefik.http.routers.hello.entrypoints=http" -l="traefik.http.services.hello.loadbalancer.server.port=5000" testingchneau/testing-github-actions:${{ steps.get_tag_name.outputs.VERSION }}
