@@ -1,4 +1,4 @@
-name: CI/CD
+name: GCR test
 on:
   push:
     branches:
@@ -6,7 +6,6 @@ on:
 jobs:
   docker:
     runs-on: ubuntu-latest
-    needs: tests
     name: Build and Publish docker image
     steps:
       - name: Check out repository
