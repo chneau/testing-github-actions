@@ -20,6 +20,9 @@ It's as easy as getting the workflow file correct. I'm now planing to replace so
 - https://hub.docker.com/r/testingchneau/testing-github-actions/tags
 - https://github.com/chneau/testing-github-actions/actions
 - http://chneau.ddns.net
+- https://itnext.io/app-trimming-in-net-5-reduce-your-app-sizes-dramatically-39891e2bedc1
+  - `-p:PublishTrimmed=True -p:TrimMode=CopyUsed`
+  - `-p:PublishTrimmed=True -p:TrimMode=Link`
 
 ## dev
 
